@@ -31,9 +31,9 @@
     <div class="band__body">
       <div class="hero-grid">
         <div>
-          <p class="hero__eyebrow">PhD candidate &middot; Aerospace Engineering &middot; Texas A&amp;M University,College Station</p>
+          <p class="hero__eyebrow">PhD candidate &middot; Aerospace Engineering &middot; Texas A&amp;M University</p>
           <h1 class="hero__name">Milin<br>Martin</h1>
-          <p class="hero__thesis">I run numerical simulations of gaseous detonations, mostly to work out what makes them stop.</p>
+          <p class="hero__thesis">I study gaseous detonations through numerical simulation, with a focus on how and why they quench.</p>
         </div>
         <figure class="portrait">
           <img src="milin.jpg" alt="Milin Martin" width="800" height="800">
@@ -49,15 +49,18 @@
     <div class="band__body">
       <h2>About</h2>
 
-      <p class="lede">I&rsquo;m in the final year of a PhD in aerospace engineering at Texas A&amp;M University, working with Elaine Oran on how detonations quench.</p>
+      <p class="lede">I am in the final year of a PhD in aerospace engineering at Texas A&amp;M University, working with Elaine Oran on the quenching of gaseous detonations.</p>
 
-      <p>A detonation is a combustion wave that runs ahead of itself &mdash; the shock compresses the gas hard enough to ignite it, and the released heat drives the shock. Send one into a channel narrow enough and it usually dies. But not always, and not always for the reasons you would guess. I simulate that whole sequence: flame acceleration, the transition from deflagration to detonation, propagation, and then the quenching or reinitiation at the end.</p>
+      <p>A detonation is a combustion wave coupled to a shock: the shock compresses the gas enough to ignite it, and the heat released sustains the shock. Confine one in a sufficiently narrow channel and it will usually quench &mdash; though not always, and not always by the mechanism one would expect. My work covers that full sequence: flame acceleration, the transition from deflagration to detonation, propagation, and the eventual quenching or reinitiation.</p>
 
-      <p>The applied version of the question is how to build a detonation arrestor &mdash; the device that stops a flame front from travelling down a gas pipeline. That matters more now that hydrogen is being blended into infrastructure originally designed for methane, since the two behave quite differently once something ignites.</p>
+      <p>The applied motivation is detonation arrestor design, the devices that prevent a flame or detonation front from propagating along a gas transport pipeline. The question has become more pressing as hydrogen is blended into infrastructure originally built for methane, since the two mixtures behave quite differently once ignition occurs.</p>
 
-      <p>The work is reactive-flow computation on HPC clusters, mostly using AMReX. A good share of it is resolution: detonation cell structure only appears once the grid is fine enough, so before trusting a result I usually have to establish what resolution that particular result actually needed.</p>
+      <p>The work is reactive-flow computation on high-performance computing clusters, built on the AMReX and OpenFOAM frameworks. I run established solvers &mdash; PeleC, AMRFCT and detonationFoam &mdash; and am developing two of my own: PYRO, in AMReX, and CDMFoam, in OpenFOAM.</p>
 
-      <p>Before Texas A&amp;M I did a master&rsquo;s in propulsion engineering in Trivandrum, on supersonic intakes, and a short stint at IIT Madras on thermal resistance at solid&ndash;fluid interfaces using molecular dynamics. Outside of research I draw, play soccer, collect Japanese manga, and am slowly working through Japanese and Chinese.</p>
+      <p>Resolution is a recurring concern throughout. A reactive simulation only reproduces the correct physics once the grid resolves the relevant chemical and hydrodynamic length scales, and those scales shift from one problem to the next. Establishing what resolution a given result requires is therefore part of producing the result, not a step that follows it.</p>
+
+      <p>Before Texas A&amp;M I completed a master&rsquo;s in propulsion engineering in Trivandrum, on supersonic intakes, and spent a short period at IIT Madras studying thermal resistance at solid&ndash;fluid interfaces using molecular dynamics. Away from research I draw, play soccer, collect Japanese manga, and am slowly working through Japanese and Chinese.</p>
+
     </div>
   </section>
 
@@ -70,21 +73,28 @@
           <span class="swatch" style="background:#2e1b5b"></span>
           <div>
             <h3>Detonation quenching and reinitiation</h3>
-            <p>What happens when a detonation enters a channel narrow enough to kill it &mdash; wall heat loss, the three-dimensional structure of the front, and the cases where the wave comes back instead of dying.</p>
+            <p>The mechanisms by which a detonation fails in a confined channel: wall heat loss, the three-dimensional structure of the front, and the conditions under which the wave reinitiates rather than quenching.</p>
           </div>
         </li>
         <li>
           <span class="swatch" style="background:#b5347f"></span>
           <div>
             <h3>Transition to detonation in fuel blends</h3>
-            <p>Run-up distances and detonation cell sizes in hydrogen&ndash;methane mixtures, which is the practical question behind blending hydrogen into existing natural gas pipelines.</p>
+            <p>Run-up distances and detonation cell sizes in hydrogen&ndash;methane mixtures, motivated by the blending of hydrogen into existing natural gas infrastructure.</p>
+          </div>
+        </li>
+        <li>
+          <span class="swatch" style="background:#e0653f"></span>
+          <div>
+            <h3>Shock transmission from open tubes</h3>
+            <p>The behaviour of the shock once it exits a detonation tube, and its interaction with the exhaust gases trailing behind it.</p>
           </div>
         </li>
         <li>
           <span class="swatch" style="background:#f0a830"></span>
           <div>
-            <h3>Shock transmission from open tubes</h3>
-            <p>What the shock does once it leaves the end of a detonation tube, and how it interacts with the exhaust gases trailing behind it.</p>
+            <h3>Solver development</h3>
+            <p>PYRO and CDMFoam, built on AMReX and OpenFOAM respectively, for reactive-flow problems that existing solvers do not cover well.</p>
           </div>
         </li>
       </ul>
@@ -121,7 +131,7 @@
     <div class="band__tick">Contact</div>
     <div class="band__body">
       <h2>Get in touch</h2>
-      <p>Happy to hear from anyone working on detonations, process safety, or reactive flow solvers. There are videos of some of the runs on the <a href="simulations.html">simulations page</a>.</p>
+      <p>I am glad to hear from anyone working on detonations, process safety, or reactive-flow solvers. Videos from a number of the runs are on the <a href="simulations.html">simulations page</a>.</p>
       <ul class="links">
         <li><a href="mailto:milin333martin@tamu.edu">milin333martin@tamu.edu</a></li>
 
