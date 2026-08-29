@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Simulations — Milin Martin</title>
-<meta name="description" content="Numerical simulation results, videos, and run parameters.">
+<title>Simulations &mdash; Milin Martin</title>
+<meta name="description" content="Numerical simulations of compressible and reactive flow: verification cases, detonation propagation, quenching and deflagration-to-detonation transition.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,108 +29,449 @@
   <section class="band" id="intro">
     <div class="band__tick">Overview</div>
     <div class="band__body">
-      <p class="hero__eyebrow">Results &middot; Last updated August 2026</p>
+      <p class="hero__eyebrow">Results &middot; Updated August 2026</p>
       <h1 class="hero__name">Simulations</h1>
-      <p class="hero__thesis">Selected runs, with the parameters needed to reproduce them.</p>
+      <p class="hero__thesis">Verification cases and reactive-flow results, run in AMReX and OpenFOAM.</p>
     </div>
   </section>
 
-  <section class="band" id="figures">
-    <div class="band__tick">Figures</div>
+  <section class="band" id="verification">
+    <div class="band__tick">Verification</div>
     <div class="band__body">
-
-      <p class="lede">Each figure below is one run. Videos are rendered from the raw field output; the tables give the setup, so anything here should be repeatable.</p>
+      <h2>Verification cases</h2>
+      <p class="lede">Problems with known solutions or well-established reference results. These come first: a solver that cannot reproduce them is not worth pointing at anything harder.</p>
 
       <div class="figures">
-
-        <!-- ======================= FIGURE 1 ======================= -->
         <figure class="figure">
           <div class="figure__media">
 
-            <!-- Placeholder. Delete this <div> and uncomment ONE block below. -->
+            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
             <div class="figure__slot">
-              <strong>No video yet</strong>
-              <span>Put your file in media/ then swap this block</span>
+              <strong>Media to follow</strong>
+              <span>Figure 1</span>
             </div>
 
-            <!-- OPTION A — your own video file:
-            <video controls loop muted playsinline preload="metadata" poster="media/run-01-poster.jpg">
-              <source src="media/run-01.mp4" type="video/mp4">
-              Your browser can't play this video. <a href="media/run-01.mp4">Download it instead.</a>
+            <!-- A. Video file:
+            <video controls loop muted playsinline preload="metadata" poster="media/fig01-poster.jpg">
+              <source src="media/fig01.mp4" type="video/mp4">
+              <a href="media/fig01.mp4">Download the video</a>
             </video>
             -->
 
-            <!-- OPTION B — a YouTube video (use the /embed/ URL, not the watch?v= one):
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID"
-                    title="Run 01: vorticity field"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+            <!-- B. YouTube (use the /embed/ URL):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="1D Sod shock tube" allowfullscreen></iframe>
             -->
 
-            <!-- OPTION C — a still image instead of a video:
-            <img src="media/run-01.png" alt="Vorticity magnitude at t = 12.0, showing shed vortices downstream of the cylinder.">
+            <!-- C. Still image:
+            <img src="media/fig01.png" alt="1D Sod shock tube">
             -->
 
           </div>
 
           <figcaption class="figure__caption">
             <p class="figure__label">Fig. 1</p>
-            <h3>Vortex shedding behind a circular cylinder</h3>
-            <p>Vorticity magnitude over ten shedding cycles. The wake transitions to a stable von Kármán street after roughly two cycles, and the measured Strouhal number sits within one percent of the published value for this Reynolds number.</p>
-
+            <h3>1D Sod shock tube</h3>
+            <p>The standard Riemann problem: a diaphragm separates two constant states, and its removal produces a shock, a contact discontinuity and a rarefaction fan. An exact solution exists, which makes this the first check on whether a compressible solver captures wave speeds and jump conditions correctly.</p>
+            <!-- A table of run parameters. Uncomment and fill in, then copy it into the other figures.
             <table class="params">
               <caption>Run parameters</caption>
               <tbody>
-                <tr><th scope="row">Solver</th><td>Incompressible Navier&ndash;Stokes, 2nd-order projection</td></tr>
-                <tr><th scope="row">Grid</th><td>2048 &times; 1024, uniform</td></tr>
-                <tr><th scope="row">Reynolds number</th><td>Re = 200</td></tr>
-                <tr><th scope="row">Time step</th><td>&Delta;t = 1.0 &times; 10<sup>-4</sup></td></tr>
-                <tr><th scope="row">Wall time</th><td>4.2 h on 128 cores</td></tr>
+                <tr><th scope="row">Solver</th><td>PYRO (AMReX)</td></tr>
+                <tr><th scope="row">Grid</th><td>&nbsp;</td></tr>
+                <tr><th scope="row">Mixture</th><td>&nbsp;</td></tr>
+                <tr><th scope="row">Initial conditions</th><td>&nbsp;</td></tr>
+                <tr><th scope="row">Wall time</th><td>&nbsp;</td></tr>
               </tbody>
             </table>
+            -->
+
           </figcaption>
         </figure>
 
-        <!-- ======================= FIGURE 2 ======================= -->
         <figure class="figure">
           <div class="figure__media">
+
+            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
             <div class="figure__slot">
-              <strong>No video yet</strong>
-              <span>Put your file in media/ then swap this block</span>
+              <strong>Media to follow</strong>
+              <span>Figure 2</span>
             </div>
+
+            <!-- A. Video file:
+            <video controls loop muted playsinline preload="metadata" poster="media/fig02-poster.jpg">
+              <source src="media/fig02.mp4" type="video/mp4">
+              <a href="media/fig02.mp4">Download the video</a>
+            </video>
+            -->
+
+            <!-- B. YouTube (use the /embed/ URL):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="2D Riemann problem" allowfullscreen></iframe>
+            -->
+
+            <!-- C. Still image:
+            <img src="media/fig02.png" alt="2D Riemann problem">
+            -->
+
           </div>
 
           <figcaption class="figure__caption">
             <p class="figure__label">Fig. 2</p>
-            <h3>Grid refinement study</h3>
-            <p>The same case at three resolutions. Drag coefficient converges at close to second order, which is what the discretisation should give; the coarsest grid under-resolves the separation point and is shown here mainly as a warning.</p>
-
-            <table class="params">
-              <caption>Run parameters</caption>
-              <tbody>
-                <tr><th scope="row">Grids</th><td>512&sup2;, 1024&sup2;, 2048&sup2;</td></tr>
-                <tr><th scope="row">Observed order</th><td>1.94</td></tr>
-                <tr><th scope="row">Reference</th><td>Benchmark case, published value</td></tr>
-                <tr><th scope="row">Code</th><td><a href="https://github.com/yourusername">github.com/yourusername</a></td></tr>
-              </tbody>
-            </table>
+            <h3>2D Riemann problem</h3>
+            <p>Four constant states arranged in quadrants. The interactions between them generate shocks, rarefactions and contact lines simultaneously, which tests whether the scheme resolves multidimensional wave interactions without introducing directional bias.</p>
           </figcaption>
         </figure>
 
-        <!-- To add another figure, copy one whole <figure> block and paste it here. -->
+        <figure class="figure">
+          <div class="figure__media">
 
+            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
+            <div class="figure__slot">
+              <strong>Media to follow</strong>
+              <span>Figure 3</span>
+            </div>
+
+            <!-- A. Video file:
+            <video controls loop muted playsinline preload="metadata" poster="media/fig03-poster.jpg">
+              <source src="media/fig03.mp4" type="video/mp4">
+              <a href="media/fig03.mp4">Download the video</a>
+            </video>
+            -->
+
+            <!-- B. YouTube (use the /embed/ URL):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Double Mach reflection" allowfullscreen></iframe>
+            -->
+
+            <!-- C. Still image:
+            <img src="media/fig03.png" alt="Double Mach reflection">
+            -->
+
+          </div>
+
+          <figcaption class="figure__caption">
+            <p class="figure__label">Fig. 3</p>
+            <h3>Double Mach reflection</h3>
+            <p>A strong shock meeting an inclined wall, producing an incident shock, a reflected shock, a Mach stem and a slip line, together with a wall jet. The case is demanding on both resolution and robustness, and is a useful test of adaptive refinement near the triple point.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="figure">
+          <div class="figure__media">
+
+            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
+            <div class="figure__slot">
+              <strong>Media to follow</strong>
+              <span>Figure 4</span>
+            </div>
+
+            <!-- A. Video file:
+            <video controls loop muted playsinline preload="metadata" poster="media/fig04-poster.jpg">
+              <source src="media/fig04.mp4" type="video/mp4">
+              <a href="media/fig04.mp4">Download the video</a>
+            </video>
+            -->
+
+            <!-- B. YouTube (use the /embed/ URL):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Supersonic flow over a cylinder and a wedge" allowfullscreen></iframe>
+            -->
+
+            <!-- C. Still image:
+            <img src="media/fig04.png" alt="Supersonic flow over a cylinder and a wedge">
+            -->
+
+          </div>
+
+          <figcaption class="figure__caption">
+            <p class="figure__label">Fig. 4</p>
+            <h3>Supersonic flow over a cylinder and a wedge</h3>
+            <p>A detached bow shock ahead of the cylinder and an attached oblique shock at the wedge. Standoff distance and shock angle are both known quantities, so the case checks shock capture on curved and inclined geometry.</p>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <section class="band" id="data">
-    <div class="band__tick">Data</div>
+  <section class="band" id="reactive">
+    <div class="band__tick">Reactive</div>
     <div class="band__body">
-      <h2>Code and data</h2>
-      <p>Run configurations and post-processing scripts are in the repository. Raw field output is large, so it&rsquo;s available on request rather than hosted here.</p>
+      <h2>Reactive flow</h2>
+      <p class="lede">Combustion cases, ordered roughly by how much of the problem has to be resolved: from a one-dimensional detonation through to three-dimensional quenching in confined geometry.</p>
+
+      <div class="figures">
+        <figure class="figure">
+          <div class="figure__media">
+
+            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
+            <div class="figure__slot">
+              <strong>Media to follow</strong>
+              <span>Figure 5</span>
+            </div>
+
+            <!-- A. Video file:
+            <video controls loop muted playsinline preload="metadata" poster="media/fig05-poster.jpg">
+              <source src="media/fig05.mp4" type="video/mp4">
+              <a href="media/fig05.mp4">Download the video</a>
+            </video>
+            -->
+
+            <!-- B. YouTube (use the /embed/ URL):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="1D detonation" allowfullscreen></iframe>
+            -->
+
+            <!-- C. Still image:
+            <img src="media/fig05.png" alt="1D detonation">
+            -->
+
+          </div>
+
+          <figcaption class="figure__caption">
+            <p class="figure__label">Fig. 5</p>
+            <h3>1D detonation</h3>
+            <p>A steadily propagating detonation resolved in one dimension, following the ZND structure of a leading shock followed by an induction zone and heat release. This establishes the coupling between chemistry and hydrodynamics before any multidimensional structure is introduced.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="figure">
+          <div class="figure__media">
+
+            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
+            <div class="figure__slot">
+              <strong>Media to follow</strong>
+              <span>Figure 6</span>
+            </div>
+
+            <!-- A. Video file:
+            <video controls loop muted playsinline preload="metadata" poster="media/fig06-poster.jpg">
+              <source src="media/fig06.mp4" type="video/mp4">
+              <a href="media/fig06.mp4">Download the video</a>
+            </video>
+            -->
+
+            <!-- B. YouTube (use the /embed/ URL):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="2D cellular detonation" allowfullscreen></iframe>
+            -->
+
+            <!-- C. Still image:
+            <img src="media/fig06.png" alt="2D cellular detonation">
+            -->
+
+          </div>
+
+          <figcaption class="figure__caption">
+            <p class="figure__label">Fig. 6</p>
+            <h3>2D cellular detonation</h3>
+            <p>Transverse waves running along the front intersect the leading shock at triple points, and the tracks those points leave behind form the characteristic cell pattern. Cell size is the quantity of interest, and it is strongly sensitive to grid resolution.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="figure">
+          <div class="figure__media">
+
+            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
+            <div class="figure__slot">
+              <strong>Media to follow</strong>
+              <span>Figure 7</span>
+            </div>
+
+            <!-- A. Video file:
+            <video controls loop muted playsinline preload="metadata" poster="media/fig07-poster.jpg">
+              <source src="media/fig07.mp4" type="video/mp4">
+              <a href="media/fig07.mp4">Download the video</a>
+            </video>
+            -->
+
+            <!-- B. YouTube (use the /embed/ URL):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="2D flame acceleration in submillimetre channels" allowfullscreen></iframe>
+            -->
+
+            <!-- C. Still image:
+            <img src="media/fig07.png" alt="2D flame acceleration in submillimetre channels">
+            -->
+
+          </div>
+
+          <figcaption class="figure__caption">
+            <p class="figure__label">Fig. 7</p>
+            <h3>2D flame acceleration in submillimetre channels</h3>
+            <p>A flame accelerating in a channel narrow enough that wall heat loss and viscous drag compete directly with the expansion driving the flame forward. The balance between them determines whether acceleration continues or stalls.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="figure">
+          <div class="figure__media">
+
+            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
+            <div class="figure__slot">
+              <strong>Media to follow</strong>
+              <span>Figure 8</span>
+            </div>
+
+            <!-- A. Video file:
+            <video controls loop muted playsinline preload="metadata" poster="media/fig08-poster.jpg">
+              <source src="media/fig08.mp4" type="video/mp4">
+              <a href="media/fig08.mp4">Download the video</a>
+            </video>
+            -->
+
+            <!-- B. YouTube (use the /embed/ URL):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="DDT through wedge-shaped obstacles" allowfullscreen></iframe>
+            -->
+
+            <!-- C. Still image:
+            <img src="media/fig08.png" alt="DDT through wedge-shaped obstacles">
+            -->
+
+          </div>
+
+          <figcaption class="figure__caption">
+            <p class="figure__label">Fig. 8</p>
+            <h3>DDT through wedge-shaped obstacles</h3>
+            <p>Obstacles in the path of a propagating flame generate shock reflections and unsteady vorticity, which fold and stretch the flame surface and can drive the transition from deflagration to detonation.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="figure">
+          <div class="figure__media">
+
+            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
+            <div class="figure__slot">
+              <strong>Media to follow</strong>
+              <span>Figure 9</span>
+            </div>
+
+            <!-- A. Video file:
+            <video controls loop muted playsinline preload="metadata" poster="media/fig09-poster.jpg">
+              <source src="media/fig09.mp4" type="video/mp4">
+              <a href="media/fig09.mp4">Download the video</a>
+            </video>
+            -->
+
+            <!-- B. YouTube (use the /embed/ URL):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="DDT of hydrogen&ndash;methane fuel blends" allowfullscreen></iframe>
+            -->
+
+            <!-- C. Still image:
+            <img src="media/fig09.png" alt="DDT of hydrogen&ndash;methane fuel blends">
+            -->
+
+          </div>
+
+          <figcaption class="figure__caption">
+            <p class="figure__label">Fig. 9</p>
+            <h3>DDT of hydrogen&ndash;methane fuel blends</h3>
+            <p>Run-up distance to detonation as a function of the hydrogen fraction in a methane mixture. This is the configuration most directly relevant to blending hydrogen into pipeline networks originally built for natural gas.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="figure">
+          <div class="figure__media">
+
+            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
+            <div class="figure__slot">
+              <strong>Media to follow</strong>
+              <span>Figure 10</span>
+            </div>
+
+            <!-- A. Video file:
+            <video controls loop muted playsinline preload="metadata" poster="media/fig10-poster.jpg">
+              <source src="media/fig10.mp4" type="video/mp4">
+              <a href="media/fig10.mp4">Download the video</a>
+            </video>
+            -->
+
+            <!-- B. YouTube (use the /embed/ URL):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Shock transmission from an open detonation tube" allowfullscreen></iframe>
+            -->
+
+            <!-- C. Still image:
+            <img src="media/fig10.png" alt="Shock transmission from an open detonation tube">
+            -->
+
+          </div>
+
+          <figcaption class="figure__caption">
+            <p class="figure__label">Fig. 10</p>
+            <h3>Shock transmission from an open detonation tube</h3>
+            <p>A detonation reaching the open end of a tube transmits a shock into the surrounding gas, where it diffracts and then interacts with the exhaust products following it out of the tube.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="figure">
+          <div class="figure__media">
+
+            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
+            <div class="figure__slot">
+              <strong>Media to follow</strong>
+              <span>Figure 11</span>
+            </div>
+
+            <!-- A. Video file:
+            <video controls loop muted playsinline preload="metadata" poster="media/fig11-poster.jpg">
+              <source src="media/fig11.mp4" type="video/mp4">
+              <a href="media/fig11.mp4">Download the video</a>
+            </video>
+            -->
+
+            <!-- B. YouTube (use the /embed/ URL):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="3D detonation quenching and reinitiation in narrow channels" allowfullscreen></iframe>
+            -->
+
+            <!-- C. Still image:
+            <img src="media/fig11.png" alt="3D detonation quenching and reinitiation in narrow channels">
+            -->
+
+          </div>
+
+          <figcaption class="figure__caption">
+            <p class="figure__label">Fig. 11</p>
+            <h3>3D detonation quenching and reinitiation in narrow channels</h3>
+            <p>The full three-dimensional problem: a detonation entering a channel narrow enough to extinguish it. Whether the wave quenches outright or reinitiates depends on the front structure and on heat loss to the walls, neither of which is captured properly in two dimensions.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="figure">
+          <div class="figure__media">
+
+            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
+            <div class="figure__slot">
+              <strong>Media to follow</strong>
+              <span>Figure 12</span>
+            </div>
+
+            <!-- A. Video file:
+            <video controls loop muted playsinline preload="metadata" poster="media/fig12-poster.jpg">
+              <source src="media/fig12.mp4" type="video/mp4">
+              <a href="media/fig12.mp4">Download the video</a>
+            </video>
+            -->
+
+            <!-- B. YouTube (use the /embed/ URL):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Detonation quenching in an array of stacked narrow channels" allowfullscreen></iframe>
+            -->
+
+            <!-- C. Still image:
+            <img src="media/fig12.png" alt="Detonation quenching in an array of stacked narrow channels">
+            -->
+
+          </div>
+
+          <figcaption class="figure__caption">
+            <p class="figure__label">Fig. 12</p>
+            <h3>Detonation quenching in an array of stacked narrow channels</h3>
+            <p>Many narrow channels in parallel, which is the geometry a real detonation arrestor uses. The question is how the channels interact, and whether an array behaves like the sum of its individual channels.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="collaborate">
+    <div class="band__tick">Solvers</div>
+    <div class="band__body">
+      <h2>PYRO and CDMFoam</h2>
+      <p>Two of the solvers used here are ones I am developing: <strong>PYRO</strong>, built on AMReX, and <strong>CDMFoam</strong>, built on OpenFOAM. Both are works in progress, and both would benefit from more people looking at them.</p>
+      <p>If you are interested in contributing to either, testing them against a case of your own, or extending them in a direction I have not considered, please get in touch. I am equally glad to hear from anyone who has found a problem with them.</p>
       <ul class="links">
-        <li><a href="https://github.com/yourusername">Repository</a></li>
-        <li><a href="mailto:you@example.com">Request raw data</a></li>
+        <li><a href="mailto:milin333martin@tamu.edu">milin333martin@tamu.edu</a></li>
       </ul>
     </div>
   </section>
