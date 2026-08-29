@@ -4,9 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- EDIT 1: page title (shows in the browser tab and in search results) -->
-<title>Your Name — Numerical simulation</title>
-<meta name="description" content="Personal site: research background and simulation results.">
+<title>Milin Martin — Detonation simulations</title>
+<meta name="description" content="Milin Martin, PhD candidate in aerospace engineering at Texas A&amp;M University, working on numerical simulations of gaseous detonations.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +17,7 @@
 <div class="colorbar"></div>
 
 <header class="masthead">
-  <!-- EDIT 2: your name, in both places it appears -->
-  <a class="masthead__name" href="index.html">Your Name</a>
+  <a class="masthead__name" href="index.html">Milin Martin</a>
   <nav class="nav" aria-label="Main">
     <a href="index.html" aria-current="page">About</a>
     <a href="simulations.html">Simulations</a>
@@ -31,11 +29,18 @@
   <section class="band" id="intro">
     <div class="band__tick">Intro</div>
     <div class="band__body">
-      <!-- EDIT 3: your field, one short line -->
-      <p class="hero__eyebrow">Computational mechanics &middot; PhD candidate</p>
-      <h1 class="hero__name">Your<br>Name</h1>
-      <!-- EDIT 4: one sentence on what you actually do -->
-      <p class="hero__thesis">I build and run numerical simulations of turbulent flow, and I try to make the results legible.</p>
+      <div class="hero-grid">
+        <div>
+          <p class="hero__eyebrow">PhD candidate &middot; Aerospace Engineering &middot; Texas A&amp;M</p>
+          <h1 class="hero__name">Milin<br>Martin</h1>
+          <p class="hero__thesis">I run numerical simulations of gaseous detonations, mostly to work out what makes them stop.</p>
+        </div>
+        <figure class="portrait">
+          <img src="milin.jpg" alt="Milin Martin" width="800" height="800">
+          <!-- Change this caption to whatever you like, or delete the line -->
+          <figcaption>Rome, 2025</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -43,10 +48,16 @@
     <div class="band__tick">About</div>
     <div class="band__body">
       <h2>About</h2>
-      <!-- EDIT 5: replace these two paragraphs with your own background -->
-      <p class="lede">I work on high-resolution simulations of fluid systems, with a focus on getting solvers to stay stable at the resolutions where the interesting physics shows up.</p>
-      <p>Most of my time goes into three things: writing solver code, running it on a cluster, and figuring out whether the output means anything. The last one is the hard part. Numerical results are easy to produce and easy to misread, so a lot of the work is validation — grid refinement studies, comparisons against benchmark cases, and checking that the quantities I care about converge for the right reasons.</p>
-      <p>Before this I studied mechanical engineering, which is where I picked up the habit of asking what a number is supposed to represent before trusting it.</p>
+
+      <p class="lede">I&rsquo;m in the final year of a PhD in aerospace engineering at Texas A&amp;M University, working with Elaine Oran on how detonations quench.</p>
+
+      <p>A detonation is a combustion wave that runs ahead of itself &mdash; the shock compresses the gas hard enough to ignite it, and the released heat drives the shock. Send one into a channel narrow enough and it usually dies. But not always, and not always for the reasons you would guess. I simulate that whole sequence: flame acceleration, the transition from deflagration to detonation, propagation, and then the quenching or reinitiation at the end.</p>
+
+      <p>The applied version of the question is how to build a detonation arrestor &mdash; the device that stops a flame front from travelling down a gas pipeline. That matters more now that hydrogen is being blended into infrastructure originally designed for methane, since the two behave quite differently once something ignites.</p>
+
+      <p>The work is reactive-flow computation on HPC clusters, mostly using AMReX. A good share of it is resolution: detonation cell structure only appears once the grid is fine enough, so before trusting a result I usually have to establish what resolution that particular result actually needed.</p>
+
+      <p>Before Texas A&amp;M I did a master&rsquo;s in propulsion engineering in Trivandrum, on supersonic intakes, and a short stint at IIT Madras on thermal resistance at solid&ndash;fluid interfaces using molecular dynamics. Outside of research I draw, play soccer, collect Japanese manga, and am slowly working through Japanese and Chinese.</p>
     </div>
   </section>
 
@@ -54,30 +65,55 @@
     <div class="band__tick">Interests</div>
     <div class="band__body">
       <h2>What I&rsquo;m working on</h2>
-      <!-- EDIT 6: your research threads. Swatch colors are set inline. -->
       <ul class="legend">
         <li>
           <span class="swatch" style="background:#2e1b5b"></span>
           <div>
-            <h3>Direct numerical simulation</h3>
-            <p>Resolving the full range of scales in wall-bounded turbulence, without a subgrid model to hide behind.</p>
+            <h3>Detonation quenching and reinitiation</h3>
+            <p>What happens when a detonation enters a channel narrow enough to kill it &mdash; wall heat loss, the three-dimensional structure of the front, and the cases where the wave comes back instead of dying.</p>
           </div>
         </li>
         <li>
           <span class="swatch" style="background:#b5347f"></span>
           <div>
-            <h3>Solver performance</h3>
-            <p>Getting time-to-solution down: better preconditioners, and communication patterns that survive scaling past a few hundred cores.</p>
+            <h3>Transition to detonation in fuel blends</h3>
+            <p>Run-up distances and detonation cell sizes in hydrogen&ndash;methane mixtures, which is the practical question behind blending hydrogen into existing natural gas pipelines.</p>
           </div>
         </li>
         <li>
           <span class="swatch" style="background:#f0a830"></span>
           <div>
-            <h3>Verification and validation</h3>
-            <p>Convergence studies and benchmark comparisons, plus reproducible run configs so a result can be regenerated a year later.</p>
+            <h3>Shock transmission from open tubes</h3>
+            <p>What the shock does once it leaves the end of a detonation tube, and how it interacts with the exhaust gases trailing behind it.</p>
           </div>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <section class="band" id="papers">
+    <div class="band__tick">Papers</div>
+    <div class="band__body">
+      <h2>Selected publications</h2>
+      <ul class="pubs">
+        <li>
+          <h3><a href="https://doi.org/10.1063/5.0331079">Shock transmission and its interactions with exhaust gases from an open detonation tube</a></h3>
+          <span class="venue">Martin, Balci, Oran &middot; Physics of Fluids, 2026</span>
+        </li>
+        <li>
+          <h3>Numerical simulation of shock transmission from the exit of a detonation tube</h3>
+          <span class="venue">Martin, Balci, Oran &middot; Proc. 35th International Symposium on Shock Waves, in production</span>
+        </li>
+        <li>
+          <h3>Detonation cell size and DDT distance for ethylene&ndash;oxygen&ndash;nitrogen mixtures</h3>
+          <span class="venue">Lont, Venkataraman, Martin et al. &middot; AIAA SciTech Forum, 2024</span>
+        </li>
+        <li>
+          <h3><a href="http://dx.doi.org/10.17654/0973468622004">Accurate benchmark results of the Blasius boundary layer problem using a leaping Taylor&rsquo;s series</a></h3>
+          <span class="venue">Lal, Martin &middot; Advances and Applications in Fluid Mechanics, 2022</span>
+        </li>
+      </ul>
+      <p class="note">Plus around ten conference papers &mdash; ISOC, ICDERS, ICNC, the US National Combustion Meeting and others.</p>
     </div>
   </section>
 
@@ -85,13 +121,15 @@
     <div class="band__tick">Contact</div>
     <div class="band__body">
       <h2>Get in touch</h2>
-      <p>Happy to talk about solvers, collaborations, or a result on the <a href="simulations.html">simulations page</a>.</p>
-      <!-- EDIT 7: your real links. Delete any you don't use. -->
+      <p>Happy to hear from anyone working on detonations, process safety, or reactive flow solvers. There are videos of some of the runs on the <a href="simulations.html">simulations page</a>.</p>
       <ul class="links">
-        <li><a href="mailto:you@example.com">Email</a></li>
-        <li><a href="https://github.com/yourusername">GitHub</a></li>
-        <li><a href="https://scholar.google.com/">Google Scholar</a></li>
-        <li><a href="https://orcid.org/">ORCID</a></li>
+        <li><a href="mailto:milin333martin@tamu.edu">milin333martin@tamu.edu</a></li>
+
+        <!-- To add these, delete the arrows around a line and paste your real URL in:
+        <li><a href="PASTE_YOUR_LINKEDIN_URL">LinkedIn</a></li>
+        <li><a href="PASTE_YOUR_SCHOLAR_URL">Google Scholar</a></li>
+        <li><a href="MilinCV.pdf">CV (PDF)</a></li>
+        -->
       </ul>
     </div>
   </section>
@@ -99,8 +137,7 @@
 </main>
 
 <footer class="foot">
-  <!-- EDIT 8: name and year -->
-  <p>&copy; 2026 Your Name &middot; Built with plain HTML and CSS</p>
+  <p>&copy; 2026 Milin Martin</p>
 </footer>
 
 <script src="site.js"></script>
