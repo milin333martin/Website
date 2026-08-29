@@ -181,6 +181,38 @@ a { color: inherit; }
   color: var(--ink-2);
 }
 
+/* Name on the left, photo on the right */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 3rem;
+  align-items: end;
+}
+
+.portrait { margin: 0; }
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  border: 1px solid var(--grid);
+}
+
+.portrait figcaption {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-top: 0.65rem;
+}
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 2.25rem; }
+  .portrait { max-width: 210px; }
+}
+
 h2 {
   font-family: var(--display);
   font-weight: 700;
@@ -226,6 +258,32 @@ p:last-child { margin-bottom: 0; }
 }
 
 .legend p { margin: 0.15rem 0 0; color: var(--ink-2); font-size: 0.9375rem; }
+
+/* ---------- Publications ---------- */
+
+.pubs { list-style: none; margin: 0; padding: 0; max-width: var(--measure); }
+
+.pubs li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--grid);
+}
+
+.pubs li:first-child { border-top: 1px solid var(--grid); }
+
+.pubs h3 { font-size: 1rem; line-height: 1.4; margin-bottom: 0.4rem; }
+
+.pubs h3 a { text-decoration-color: var(--grid); text-underline-offset: 3px; }
+.pubs h3 a:hover { text-decoration-color: var(--magenta); }
+
+.pubs .venue {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+}
+
+.note { font-size: 0.9375rem; color: var(--ink-3); margin-top: 1.25rem; }
 
 /* ---------- Contact links ---------- */
 
