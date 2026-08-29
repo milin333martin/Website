@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Simulations — Your Name</title>
+<meta name="description" content="Numerical simulation results, videos, and run parameters.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="colorbar"></div>
+
+<header class="masthead">
+  <a class="masthead__name" href="index.html">Your Name</a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html">About</a>
+    <a href="simulations.html" aria-current="page">Simulations</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="band" id="intro">
+    <div class="band__tick">Overview</div>
+    <div class="band__body">
+      <p class="hero__eyebrow">Results &middot; Last updated August 2026</p>
+      <h1 class="hero__name">Simulations</h1>
+      <p class="hero__thesis">Selected runs, with the parameters needed to reproduce them.</p>
+    </div>
+  </section>
+
+  <section class="band" id="figures">
+    <div class="band__tick">Figures</div>
+    <div class="band__body">
+
+      <p class="lede">Each figure below is one run. Videos are rendered from the raw field output; the tables give the setup, so anything here should be repeatable.</p>
+
+      <div class="figures">
+
+        <!-- ======================= FIGURE 1 ======================= -->
+        <figure class="figure">
+          <div class="figure__media">
+
+            <!-- Placeholder. Delete this <div> and uncomment ONE block below. -->
+            <div class="figure__slot">
+              <strong>No video yet</strong>
+              <span>Put your file in media/ then swap this block</span>
+            </div>
+
+            <!-- OPTION A — your own video file:
+            <video controls loop muted playsinline preload="metadata" poster="media/run-01-poster.jpg">
+              <source src="media/run-01.mp4" type="video/mp4">
+              Your browser can't play this video. <a href="media/run-01.mp4">Download it instead.</a>
+            </video>
+            -->
+
+            <!-- OPTION B — a YouTube video (use the /embed/ URL, not the watch?v= one):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                    title="Run 01: vorticity field"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            -->
+
+            <!-- OPTION C — a still image instead of a video:
+            <img src="media/run-01.png" alt="Vorticity magnitude at t = 12.0, showing shed vortices downstream of the cylinder.">
+            -->
+
+          </div>
+
+          <figcaption class="figure__caption">
+            <p class="figure__label">Fig. 1</p>
+            <h3>Vortex shedding behind a circular cylinder</h3>
+            <p>Vorticity magnitude over ten shedding cycles. The wake transitions to a stable von Kármán street after roughly two cycles, and the measured Strouhal number sits within one percent of the published value for this Reynolds number.</p>
+
+            <table class="params">
+              <caption>Run parameters</caption>
+              <tbody>
+                <tr><th scope="row">Solver</th><td>Incompressible Navier&ndash;Stokes, 2nd-order projection</td></tr>
+                <tr><th scope="row">Grid</th><td>2048 &times; 1024, uniform</td></tr>
+                <tr><th scope="row">Reynolds number</th><td>Re = 200</td></tr>
+                <tr><th scope="row">Time step</th><td>&Delta;t = 1.0 &times; 10<sup>-4</sup></td></tr>
+                <tr><th scope="row">Wall time</th><td>4.2 h on 128 cores</td></tr>
+              </tbody>
+            </table>
+          </figcaption>
+        </figure>
+
+        <!-- ======================= FIGURE 2 ======================= -->
+        <figure class="figure">
+          <div class="figure__media">
+            <div class="figure__slot">
+              <strong>No video yet</strong>
+              <span>Put your file in media/ then swap this block</span>
+            </div>
+          </div>
+
+          <figcaption class="figure__caption">
+            <p class="figure__label">Fig. 2</p>
+            <h3>Grid refinement study</h3>
+            <p>The same case at three resolutions. Drag coefficient converges at close to second order, which is what the discretisation should give; the coarsest grid under-resolves the separation point and is shown here mainly as a warning.</p>
+
+            <table class="params">
+              <caption>Run parameters</caption>
+              <tbody>
+                <tr><th scope="row">Grids</th><td>512&sup2;, 1024&sup2;, 2048&sup2;</td></tr>
+                <tr><th scope="row">Observed order</th><td>1.94</td></tr>
+                <tr><th scope="row">Reference</th><td>Benchmark case, published value</td></tr>
+                <tr><th scope="row">Code</th><td><a href="https://github.com/yourusername">github.com/yourusername</a></td></tr>
+              </tbody>
+            </table>
+          </figcaption>
+        </figure>
+
+        <!-- To add another figure, copy one whole <figure> block and paste it here. -->
+
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="data">
+    <div class="band__tick">Data</div>
+    <div class="band__body">
+      <h2>Code and data</h2>
+      <p>Run configurations and post-processing scripts are in the repository. Raw field output is large, so it&rsquo;s available on request rather than hosted here.</p>
+      <ul class="links">
+        <li><a href="https://github.com/yourusername">Repository</a></li>
+        <li><a href="mailto:you@example.com">Request raw data</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p>&copy; 2026 Your Name &middot; Built with plain HTML and CSS</p>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- EDIT 1: page title (shows in the browser tab and in search results) -->
+<title>Your Name — Numerical simulation</title>
+<meta name="description" content="Personal site: research background and simulation results.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="colorbar"></div>
+
+<header class="masthead">
+  <!-- EDIT 2: your name, in both places it appears -->
+  <a class="masthead__name" href="index.html">Your Name</a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html" aria-current="page">About</a>
+    <a href="simulations.html">Simulations</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="band" id="intro">
+    <div class="band__tick">Intro</div>
+    <div class="band__body">
+      <!-- EDIT 3: your field, one short line -->
+      <p class="hero__eyebrow">Computational mechanics &middot; PhD candidate</p>
+      <h1 class="hero__name">Your<br>Name</h1>
+      <!-- EDIT 4: one sentence on what you actually do -->
+      <p class="hero__thesis">I build and run numerical simulations of turbulent flow, and I try to make the results legible.</p>
+    </div>
+  </section>
+
+  <section class="band" id="about">
+    <div class="band__tick">About</div>
+    <div class="band__body">
+      <h2>About</h2>
+      <!-- EDIT 5: replace these two paragraphs with your own background -->
+      <p class="lede">I work on high-resolution simulations of fluid systems, with a focus on getting solvers to stay stable at the resolutions where the interesting physics shows up.</p>
+      <p>Most of my time goes into three things: writing solver code, running it on a cluster, and figuring out whether the output means anything. The last one is the hard part. Numerical results are easy to produce and easy to misread, so a lot of the work is validation — grid refinement studies, comparisons against benchmark cases, and checking that the quantities I care about converge for the right reasons.</p>
+      <p>Before this I studied mechanical engineering, which is where I picked up the habit of asking what a number is supposed to represent before trusting it.</p>
+    </div>
+  </section>
+
+  <section class="band" id="work">
+    <div class="band__tick">Interests</div>
+    <div class="band__body">
+      <h2>What I&rsquo;m working on</h2>
+      <!-- EDIT 6: your research threads. Swatch colors are set inline. -->
+      <ul class="legend">
+        <li>
+          <span class="swatch" style="background:#2e1b5b"></span>
+          <div>
+            <h3>Direct numerical simulation</h3>
+            <p>Resolving the full range of scales in wall-bounded turbulence, without a subgrid model to hide behind.</p>
+          </div>
+        </li>
+        <li>
+          <span class="swatch" style="background:#b5347f"></span>
+          <div>
+            <h3>Solver performance</h3>
+            <p>Getting time-to-solution down: better preconditioners, and communication patterns that survive scaling past a few hundred cores.</p>
+          </div>
+        </li>
+        <li>
+          <span class="swatch" style="background:#f0a830"></span>
+          <div>
+            <h3>Verification and validation</h3>
+            <p>Convergence studies and benchmark comparisons, plus reproducible run configs so a result can be regenerated a year later.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" id="contact">
+    <div class="band__tick">Contact</div>
+    <div class="band__body">
+      <h2>Get in touch</h2>
+      <p>Happy to talk about solvers, collaborations, or a result on the <a href="simulations.html">simulations page</a>.</p>
+      <!-- EDIT 7: your real links. Delete any you don't use. -->
+      <ul class="links">
+        <li><a href="mailto:you@example.com">Email</a></li>
+        <li><a href="https://github.com/yourusername">GitHub</a></li>
+        <li><a href="https://scholar.google.com/">Google Scholar</a></li>
+        <li><a href="https://orcid.org/">ORCID</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <!-- EDIT 8: name and year -->
+  <p>&copy; 2026 Your Name &middot; Built with plain HTML and CSS</p>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

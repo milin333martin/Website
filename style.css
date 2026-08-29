@@ -1,0 +1,404 @@
+/* ============================================================
+   Shared styles for both pages.
+   Change a value here and it updates the whole site.
+   ============================================================ */
+
+:root {
+  /* Palette sampled from a sequential colormap: deep indigo -> magenta -> amber */
+  --indigo: #2e1b5b;
+  --magenta: #b5347f;
+  --amber: #f0a830;
+
+  --ink: #17151f;
+  --ink-2: #4a4658;
+  --ink-3: #7c7890;
+  --paper: #f4f5f8;
+  --panel: #ffffff;
+  --grid: #d6d9e2;
+
+  --rail: 108px;      /* width of the axis rail column */
+  --measure: 64ch;    /* comfortable reading width */
+
+  --display: "Archivo", system-ui, sans-serif;
+  --body: "Newsreader", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-optical-sizing: auto;
+}
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--magenta);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Colorbar + masthead ---------- */
+
+.colorbar {
+  height: 6px;
+  background: linear-gradient(90deg,
+    var(--indigo) 0%,
+    #6b2a76 32%,
+    var(--magenta) 62%,
+    #e0653f 84%,
+    var(--amber) 100%);
+}
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--grid);
+}
+
+.masthead__name {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--ink-2);
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.nav a:hover { color: var(--ink); border-bottom-color: var(--grid); }
+
+.nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--magenta);
+}
+
+/* ---------- Page frame ---------- */
+
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem 5rem;
+}
+
+/* A band is one section: an axis tick on the left, content on the right. */
+.band {
+  display: grid;
+  grid-template-columns: var(--rail) minmax(0, 1fr);
+  align-items: start;
+}
+
+.band__tick {
+  position: relative;
+  align-self: stretch;
+  padding: 3.25rem 1.25rem 3.25rem 0;
+  border-right: 1px solid var(--grid);
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-align: right;
+  transition: color 0.3s ease;
+}
+
+/* the tick mark that crosses the axis */
+.band__tick::after {
+  content: "";
+  position: absolute;
+  right: -9px;
+  top: 3.6rem;
+  width: 9px;
+  height: 1px;
+  background: var(--grid);
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.band.is-current .band__tick { color: var(--magenta); }
+.band.is-current .band__tick::after { width: 20px; background: var(--magenta); }
+
+.band__body {
+  padding: 3.25rem 0 3.25rem 2rem;
+  min-width: 0;
+}
+
+/* ---------- Type ---------- */
+
+.hero__eyebrow {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 1.25rem;
+}
+
+.hero__name {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.75rem, 8vw, 5.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+
+.hero__thesis {
+  max-width: 30ch;
+  margin: 1.5rem 0 0;
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0 0 1.25rem;
+}
+
+h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem;
+}
+
+p { max-width: var(--measure); margin: 0 0 1.1rem; }
+p:last-child { margin-bottom: 0; }
+
+.lede { font-size: 1.1875rem; color: var(--ink-2); }
+
+/* ---------- Legend (research interests) ---------- */
+
+.legend { list-style: none; margin: 0; padding: 0; max-width: var(--measure); }
+
+.legend li {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--grid);
+}
+
+.legend li:first-child { border-top: 1px solid var(--grid); }
+
+.legend .swatch {
+  width: 14px;
+  height: 14px;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+.legend p { margin: 0.15rem 0 0; color: var(--ink-2); font-size: 0.9375rem; }
+
+/* ---------- Contact links ---------- */
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.links a {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 0.5rem 0.85rem;
+  background: var(--panel);
+  border: 1px solid var(--grid);
+  border-radius: 3px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.links a:hover {
+  border-color: var(--magenta);
+  transform: translateY(-1px);
+}
+
+/* ---------- Figures (simulation cards) ---------- */
+
+.figures {
+  display: grid;
+  gap: 3.5rem;
+}
+
+.figure {
+  background: var(--panel);
+  border: 1px solid var(--grid);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.figure__media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #101018;
+}
+
+.figure__media video,
+.figure__media iframe,
+.figure__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+/* Styled stand-in shown until you drop a real video in */
+.figure__slot {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 1.5rem;
+  color: #8f8ba6;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.figure__slot strong {
+  color: #cfcbe0;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.figure__caption { padding: 1.5rem 1.5rem 1.75rem; }
+
+.figure__label {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  margin: 0 0 0.4rem;
+}
+
+.figure__caption p { font-size: 0.9688rem; color: var(--ink-2); }
+
+/* Run parameters table */
+.params {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+}
+
+.params caption {
+  text-align: left;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding-bottom: 0.6rem;
+}
+
+.params th,
+.params td {
+  text-align: left;
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  border-top: 1px solid var(--grid);
+  vertical-align: top;
+}
+
+.params th { font-weight: 400; color: var(--ink-3); width: 40%; }
+.params td { color: var(--ink); }
+
+/* ---------- Footer ---------- */
+
+.foot {
+  border-top: 1px solid var(--grid);
+  padding: 2rem 1.5rem 3rem;
+  max-width: 1120px;
+  margin: 0 auto;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
+
+/* ---------- Small screens: the axis rail folds away ---------- */
+
+@media (max-width: 760px) {
+  .band { grid-template-columns: 1fr; }
+
+  .band__tick {
+    border-right: 0;
+    text-align: left;
+    padding: 2.5rem 0 0;
+  }
+
+  .band__tick::after {
+    right: auto;
+    left: 0;
+    top: auto;
+    bottom: -0.55rem;
+    width: 26px;
+    background: var(--magenta);
+  }
+
+  .band.is-current .band__tick::after { width: 26px; }
+
+  .band__body { padding: 1.25rem 0 2.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
