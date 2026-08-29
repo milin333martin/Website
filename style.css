@@ -341,8 +341,11 @@ p:last-child { margin-bottom: 0; }
   width: 100%;
   height: 100%;
   border: 0;
-  object-fit: cover;
+  object-fit: contain;
 }
+
+/* Use on figure__media when the media is a plot rather than a rendering */
+.figure__media--plot { background: #ffffff; }
 
 /* Styled stand-in shown until you drop a real video in */
 .figure__slot {
