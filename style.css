@@ -406,6 +406,35 @@ p:last-child { margin-bottom: 0; }
   margin-right: 0.5rem;
 }
 
+/* Panels side by side instead of stacked */
+.figure__row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-bottom: 1px solid var(--grid);
+}
+
+.figure__row .figure__panel {
+  border-bottom: 0;
+  border-right: 1px solid var(--grid);
+}
+
+.figure__row .figure__panel:last-child { border-right: 0; }
+
+.figure__row .figure__panelcap {
+  padding: 0.65rem 0.9rem 0.85rem;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 700px) {
+  .figure__row { grid-template-columns: 1fr; }
+  .figure__row .figure__panel {
+    border-right: 0;
+    border-bottom: 1px solid var(--grid);
+  }
+  .figure__row .figure__panel:last-child { border-bottom: 0; }
+}
+
 /* Run parameters table */
 .params {
   width: 100%;
