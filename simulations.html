@@ -305,35 +305,33 @@
         </figure>
 
         <figure class="figure">
-          <div class="figure__media">
-
-            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
-            <div class="figure__slot">
-              <strong>Media to follow</strong>
-              <span>Figure 8</span>
-            </div>
-
-            <!-- A. Video file:
+          <div class="figure__media figure__media--plot" style="aspect-ratio: 1000 / 1336;">
             <video controls loop muted playsinline preload="metadata" poster="media/fig08-poster.jpg">
               <source src="media/fig08.mp4" type="video/mp4">
-              <a href="media/fig08.mp4">Download the video</a>
+              <a href="media/fig08.mp4">Download the animation</a>
             </video>
-            -->
-
-            <!-- B. YouTube (use the /embed/ URL):
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="DDT through wedge-shaped obstacles" allowfullscreen></iframe>
-            -->
-
-            <!-- C. Still image:
-            <img src="media/fig08.png" alt="DDT through wedge-shaped obstacles">
-            -->
-
           </div>
 
           <figcaption class="figure__caption">
             <p class="figure__label">Fig. 8</p>
             <h3>DDT through wedge-shaped obstacles</h3>
-            <p>Obstacles in the path of a propagating flame generate shock reflections and unsteady vorticity, which fold and stretch the flame surface and can drive the transition from deflagration to detonation.</p>
+            <p>Temperature (upper) and numerical schlieren (lower) as a flame propagates along a channel lined with rows of wedge-shaped obstacles. Ignition is from a small kernel at the left-hand end; the view follows the front as it moves down the channel.</p>
+
+            <p>Each wedge reflects the precursor shock and sheds vorticity into the cavity behind it. The flame is folded and stretched by that flow, its surface area and burning rate rise, and the feedback between the two drives the transition. By 200&nbsp;&micro;s the shock and reaction front have coupled and propagate together through the remaining obstacles.</p>
+
+            <p>This case exercises PYRO&rsquo;s immersed boundary treatment and its reaction model at the same time: the wedges are represented on a Cartesian grid rather than meshed, while the chemistry runs in the flow around them. The configuration takes its cue from Xiao et al. (2026) but is not a reproduction of it, and the immersed boundary method follows the direct-forcing approach of Chaudhuri, Hadjadj and Chinnayya (2011).</p>
+
+            <table class="params">
+              <caption>Run parameters</caption>
+              <tbody>
+                <tr><th scope="row">Solver</th><td>PYRO (AMReX)</td></tr>
+                <tr><th scope="row">Geometry</th><td>Wedge obstacle array, immersed boundary</td></tr>
+                <tr><th scope="row">Domain</th><td>2 cm channel height</td></tr>
+                <tr><th scope="row">Fields shown</th><td>Temperature; numerical schlieren</td></tr>
+              </tbody>
+            </table>
+
+            <p class="figure__ref"><b>References</b>H. Xiao, X. Zhang, M. Zhao and C. Shi, &ldquo;An efficient method based on the evolutionary center algorithm for optimizing chemical-diffusive models for flame acceleration and DDT&rdquo;, arXiv:2604.19812, 2026. <a href="https://doi.org/10.48550/arXiv.2604.19812">doi:10.48550/arXiv.2604.19812</a><br><br>A. Chaudhuri, A. Hadjadj and A. Chinnayya, &ldquo;On the use of immersed boundary methods for shock/obstacle interactions&rdquo;, <cite>Journal of Computational Physics</cite>, vol. 230, no. 5, pp. 1731&ndash;1748, 2011. <a href="https://doi.org/10.1016/j.jcp.2010.11.016">doi:10.1016/j.jcp.2010.11.016</a></p>
           </figcaption>
         </figure>
 
