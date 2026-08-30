@@ -275,35 +275,32 @@
         </figure>
 
         <figure class="figure">
-          <div class="figure__media">
-
-            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
-            <div class="figure__slot">
-              <strong>Media to follow</strong>
-              <span>Figure 7</span>
-            </div>
-
-            <!-- A. Video file:
+          <div class="figure__media figure__media--plot" style="aspect-ratio: 720 / 344;">
             <video controls loop muted playsinline preload="metadata" poster="media/fig07-poster.jpg">
               <source src="media/fig07.mp4" type="video/mp4">
-              <a href="media/fig07.mp4">Download the video</a>
+              <a href="media/fig07.mp4">Download the animation</a>
             </video>
-            -->
-
-            <!-- B. YouTube (use the /embed/ URL):
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="2D flame acceleration in submillimetre channels" allowfullscreen></iframe>
-            -->
-
-            <!-- C. Still image:
-            <img src="media/fig07.png" alt="2D flame acceleration in submillimetre channels">
-            -->
-
           </div>
 
           <figcaption class="figure__caption">
             <p class="figure__label">Fig. 7</p>
             <h3>2D flame acceleration in submillimetre channels</h3>
-            <p>A flame accelerating in a channel narrow enough that wall heat loss and viscous drag compete directly with the expansion driving the flame forward. The balance between them determines whether acceleration continues or stalls.</p>
+            <p>Temperature field as a flame accelerates along a submillimetre channel and transitions to detonation, computed with PYRO. The case follows Houim, Ozgen and Oran (2016) and uses the chemical&ndash;diffusive model parameters given there.</p>
+
+            <p>The flame accelerates through its interaction with the boundary layer: the tip runs well ahead of the skirt, and the stretch that follows increases the flame surface area and the rate of energy release. Acting as a piston, the accelerating flame sends out compression waves that coalesce into a precursor shock, and viscous dissipation in the post-shock flow heats the boundary layer beyond what the shock alone delivers. The reactants near the wall eventually autoignite ahead of the flame skirt, and the spontaneous wave that forms propagates along the reactivity gradient left through the boundary layer and initiates the detonation.</p>
+
+            <table class="params">
+              <caption>Run parameters</caption>
+              <tbody>
+                <tr><th scope="row">Solver</th><td>PYRO (AMReX)</td></tr>
+                <tr><th scope="row">Model</th><td>Chemical&ndash;diffusive model</td></tr>
+                <tr><th scope="row">Parameters</th><td>Houim, Ozgen &amp; Oran (2016)</td></tr>
+                <tr><th scope="row">Mixture</th><td>Representative of stoichiometric ethylene&ndash;oxygen</td></tr>
+                <tr><th scope="row">Walls</th><td>No-slip, adiabatic</td></tr>
+              </tbody>
+            </table>
+
+            <p class="figure__ref"><b>Reference</b>R. W. Houim, A. Ozgen and E. S. Oran, &ldquo;The role of spontaneous waves in the deflagration-to-detonation transition in submillimetre channels&rdquo;, <cite>Combustion Theory and Modelling</cite>, vol. 20, no. 6, pp. 1068&ndash;1087, 2016. <a href="https://doi.org/10.1080/13647830.2016.1249523">doi:10.1080/13647830.2016.1249523</a></p>
           </figcaption>
         </figure>
 
