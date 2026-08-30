@@ -89,34 +89,36 @@
         </figure>
 
         <figure class="figure">
-          <div class="figure__panel">
-            <div class="figure__media figure__media--plot" style="aspect-ratio: 1200 / 1104;">
-              <video controls loop muted playsinline preload="none" poster="media/riemann2d-uniform-poster.jpg">
-                <source src="media/riemann2d-uniform.mp4" type="video/mp4">
-                <a href="media/riemann2d-uniform.mp4">Download the animation</a>
-              </video>
+          <div class="figure__row">
+            <div class="figure__panel">
+              <div class="figure__media figure__media--plot" style="aspect-ratio: 1200 / 1104;">
+                <video controls loop muted playsinline preload="none" poster="media/riemann2d-uniform-poster.jpg">
+                  <source src="media/riemann2d-uniform.mp4" type="video/mp4">
+                  <a href="media/riemann2d-uniform.mp4">Download the animation</a>
+                </video>
+              </div>
+              <p class="figure__panelcap"><b>a</b>Uniform grid</p>
             </div>
-            <p class="figure__panelcap"><b>a</b>Uniform grid, no refinement.</p>
-          </div>
 
-          <div class="figure__panel">
-            <div class="figure__media figure__media--plot" style="aspect-ratio: 1200 / 1104;">
-              <video controls loop muted playsinline preload="none" poster="media/riemann2d-amr1-poster.jpg">
-                <source src="media/riemann2d-amr1.mp4" type="video/mp4">
-                <a href="media/riemann2d-amr1.mp4">Download the animation</a>
-              </video>
+            <div class="figure__panel">
+              <div class="figure__media figure__media--plot" style="aspect-ratio: 1200 / 1104;">
+                <video controls loop muted playsinline preload="none" poster="media/riemann2d-amr1-poster.jpg">
+                  <source src="media/riemann2d-amr1.mp4" type="video/mp4">
+                  <a href="media/riemann2d-amr1.mp4">Download the animation</a>
+                </video>
+              </div>
+              <p class="figure__panelcap"><b>b</b>One refinement level</p>
             </div>
-            <p class="figure__panelcap"><b>b</b>One level of adaptive refinement.</p>
-          </div>
 
-          <div class="figure__panel">
-            <div class="figure__media figure__media--plot" style="aspect-ratio: 1200 / 1104;">
-              <video controls loop muted playsinline preload="none" poster="media/riemann2d-amr2-poster.jpg">
-                <source src="media/riemann2d-amr2.mp4" type="video/mp4">
-                <a href="media/riemann2d-amr2.mp4">Download the animation</a>
-              </video>
+            <div class="figure__panel">
+              <div class="figure__media figure__media--plot" style="aspect-ratio: 1200 / 1104;">
+                <video controls loop muted playsinline preload="none" poster="media/riemann2d-amr2-poster.jpg">
+                  <source src="media/riemann2d-amr2.mp4" type="video/mp4">
+                  <a href="media/riemann2d-amr2.mp4">Download the animation</a>
+                </video>
+              </div>
+              <p class="figure__panelcap"><b>c</b>Two levels, boxes shown</p>
             </div>
-            <p class="figure__panelcap"><b>c</b>Two levels, with the refinement boxes drawn. The boxes follow the shocks and the roll-up at the centre as the structures develop.</p>
           </div>
 
           <figcaption class="figure__caption">
@@ -124,7 +126,7 @@
             <h3>2D Riemann problem</h3>
             <p>Four constant states arranged in quadrants. The discontinuities between them interact to produce shocks, rarefactions and contact lines all at once, which tests whether the scheme resolves multidimensional wave interactions without favouring a direction. Shown as numerical schlieren, run to <i>t</i> = 0.3, by which point the slip lines have rolled up into a jet at the centre &mdash; the part of the solution most sensitive to resolution.</p>
 
-            <p>All three runs reach the same finest cell size, so they ought to agree. What differs is how many cells are spent getting there: the uniform grid carries that resolution across the whole domain, while the refined runs concentrate it where the gradients are and leave the quiescent corners coarse.</p>
+            <p>All three runs reach the same finest cell size, so they ought to agree. What differs is how many cells are spent getting there: the uniform grid carries that resolution across the whole domain, while the refined runs concentrate it where the gradients are and leave the quiescent corners coarse. In the third panel the refinement boxes are drawn, and they track the shocks and the central roll-up as those structures develop.</p>
 
             <table class="params">
               <caption>Run parameters</caption>
