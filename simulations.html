@@ -414,7 +414,24 @@
           <figcaption class="figure__caption">
             <p class="figure__label">Fig. 11</p>
             <h3>Shock transmission from an open detonation tube</h3>
-            <p>A detonation reaching the open end of a tube transmits a shock into the surrounding gas, where it diffracts and then interacts with the exhaust products following it out of the tube. The upper panel overlays numerical schlieren with temperature; the lower panel follows pressure along the tube centreline as the wave passes.</p>
+            <p>A detonation reaching the open end of a tube transmits a shock into the surrounding air. The shock weakens as the flow expands, meets the ground, and couples to the hot plume of products following it out of the tube. The upper panel overlays numerical schlieren with temperature; the lower panel follows pressure along the tube centreline as the wave passes.</p>
+
+            <p>The change in acoustic impedance at the tube exit produces two things at once: the transmitted shock, and a train of rarefactions travelling back up the tube. Those rarefactions cut the pressure driving the shock, which then separates from the expanding jet of products behind it.</p>
+
+            <p>These calculations were run with AMRFCT rather than PYRO, solving the two-dimensional reactive Navier&ndash;Stokes equations with a chemical&ndash;diffusive model on a domain that couples the tube interior to the outside atmosphere and includes a ground surface. The results are published in <cite>Physics of Fluids</cite>.</p>
+
+            <table class="params">
+              <caption>Run parameters</caption>
+              <tbody>
+                <tr><th scope="row">Solver</th><td>AMRFCT</td></tr>
+                <tr><th scope="row">Equations</th><td>2D reactive Navier&ndash;Stokes</td></tr>
+                <tr><th scope="row">Chemistry</th><td>Chemical&ndash;diffusive model</td></tr>
+                <tr><th scope="row">Domain</th><td>Coupled tube and atmosphere, with ground surface</td></tr>
+                <tr><th scope="row">Fields shown</th><td>Numerical schlieren with temperature; centreline pressure</td></tr>
+              </tbody>
+            </table>
+
+            <p class="figure__ref"><b>Reference</b>M. Martin, E. T. Balci and E. S. Oran, &ldquo;Shock transmission and its interactions with exhaust gases from an open detonation tube&rdquo;, <cite>Physics of Fluids</cite>, vol. 38, no. 6, 067114, 2026. <a href="https://doi.org/10.1063/5.0331079">doi:10.1063/5.0331079</a></p>
           </figcaption>
         </figure>
 
