@@ -43,48 +43,30 @@
 
       <div class="figures">
         <figure class="figure">
-          <div class="figure__media">
-
-            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
-            <div class="figure__slot">
-              <strong>Media to follow</strong>
-              <span>Figure 1</span>
-            </div>
-
-            <!-- A. Video file:
-            <video controls loop muted playsinline preload="metadata" poster="media/your-file-poster.jpg">
-              <source src="media/your-file.mp4" type="video/mp4">
-              <a href="media/your-file.mp4">Download the video</a>
-            </video>
-            -->
-
-            <!-- B. YouTube (use the /embed/ URL):
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="1D Sod shock tube" allowfullscreen></iframe>
-            -->
-
-            <!-- C. Still image:
-            <img src="media/your-file.png" alt="1D Sod shock tube">
-            -->
-
+          <div class="figure__media figure__media--plot" style="aspect-ratio: 1700 / 1264;">
+            <img src="media/sod-verification.png" alt="Density, pressure, velocity and temperature for the Sod shock tube at t = 0.2 on 64 cells, from one-dimensional and two-dimensional PYRO runs, against the exact solution.">
           </div>
 
           <figcaption class="figure__caption">
             <p class="figure__label">Fig. 1</p>
             <h3>1D Sod shock tube</h3>
-            <p>The standard Riemann problem: a diaphragm separates two constant states, and its removal produces a shock, a contact discontinuity and a rarefaction fan. An exact solution exists, which makes this the first check on whether a compressible solver captures wave speeds and jump conditions correctly.</p>
-            <!-- A table of run parameters. Uncomment and fill in, then copy it into the other figures.
+            <p>The standard Riemann problem: a diaphragm separates two constant states, and removing it produces a rarefaction fan, a contact discontinuity and a shock. An exact solution exists, which makes this the first check on whether a compressible solver puts the waves in the right places with the right strengths.</p>
+
+            <p>Density, pressure, velocity and temperature at <i>t</i> = 0.2 on 64 cells, against the exact solution. Even on a grid this coarse the discontinuities are held within a couple of cells.</p>
+
+            <p>Most AMReX-based solvers cannot run a genuinely one-dimensional problem; they need a two-dimensional domain one cell deep standing in for it. PYRO runs in one dimension natively. Both are plotted here, and the native 1-D result and its 2-D equivalent lie on top of each other.</p>
+
             <table class="params">
               <caption>Run parameters</caption>
               <tbody>
                 <tr><th scope="row">Solver</th><td>PYRO (AMReX)</td></tr>
-                <tr><th scope="row">Grid</th><td>&nbsp;</td></tr>
-                <tr><th scope="row">Mixture</th><td>&nbsp;</td></tr>
-                <tr><th scope="row">Initial conditions</th><td>&nbsp;</td></tr>
-                <tr><th scope="row">Wall time</th><td>&nbsp;</td></tr>
+                <tr><th scope="row">Riemann solver</th><td>HLLC-P</td></tr>
+                <tr><th scope="row">Reconstruction</th><td>TENO</td></tr>
+                <tr><th scope="row">Time integration</th><td>SSP-RK3</td></tr>
+                <tr><th scope="row">Grid</th><td>64 cells</td></tr>
+                <tr><th scope="row">Output time</th><td><i>t</i> = 0.2</td></tr>
               </tbody>
             </table>
-            -->
-
           </figcaption>
         </figure>
 
