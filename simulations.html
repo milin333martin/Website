@@ -71,35 +71,52 @@
         </figure>
 
         <figure class="figure">
-          <div class="figure__media">
-
-            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
-            <div class="figure__slot">
-              <strong>Media to follow</strong>
-              <span>Figure 2</span>
+          <div class="figure__panel">
+            <div class="figure__media figure__media--plot" style="aspect-ratio: 1200 / 1104;">
+              <video controls loop muted playsinline preload="none" poster="media/riemann2d-uniform-poster.jpg">
+                <source src="media/riemann2d-uniform.mp4" type="video/mp4">
+                <a href="media/riemann2d-uniform.mp4">Download the animation</a>
+              </video>
             </div>
+            <p class="figure__panelcap"><b>a</b>Uniform grid, no refinement.</p>
+          </div>
 
-            <!-- A. Video file:
-            <video controls loop muted playsinline preload="metadata" poster="media/your-file-poster.jpg">
-              <source src="media/your-file.mp4" type="video/mp4">
-              <a href="media/your-file.mp4">Download the video</a>
-            </video>
-            -->
+          <div class="figure__panel">
+            <div class="figure__media figure__media--plot" style="aspect-ratio: 1200 / 1104;">
+              <video controls loop muted playsinline preload="none" poster="media/riemann2d-amr1-poster.jpg">
+                <source src="media/riemann2d-amr1.mp4" type="video/mp4">
+                <a href="media/riemann2d-amr1.mp4">Download the animation</a>
+              </video>
+            </div>
+            <p class="figure__panelcap"><b>b</b>One level of adaptive refinement.</p>
+          </div>
 
-            <!-- B. YouTube (use the /embed/ URL):
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="2D Riemann problem" allowfullscreen></iframe>
-            -->
-
-            <!-- C. Still image:
-            <img src="media/your-file.png" alt="2D Riemann problem">
-            -->
-
+          <div class="figure__panel">
+            <div class="figure__media figure__media--plot" style="aspect-ratio: 1200 / 1104;">
+              <video controls loop muted playsinline preload="none" poster="media/riemann2d-amr2-poster.jpg">
+                <source src="media/riemann2d-amr2.mp4" type="video/mp4">
+                <a href="media/riemann2d-amr2.mp4">Download the animation</a>
+              </video>
+            </div>
+            <p class="figure__panelcap"><b>c</b>Two levels, with the refinement boxes drawn. The boxes follow the shocks and the roll-up at the centre as the structures develop.</p>
           </div>
 
           <figcaption class="figure__caption">
             <p class="figure__label">Fig. 2</p>
             <h3>2D Riemann problem</h3>
-            <p>Four constant states arranged in quadrants. The interactions between them generate shocks, rarefactions and contact lines simultaneously, which tests whether the scheme resolves multidimensional wave interactions without introducing directional bias.</p>
+            <p>Four constant states arranged in quadrants. The discontinuities between them interact to produce shocks, rarefactions and contact lines all at once, which tests whether the scheme resolves multidimensional wave interactions without favouring a direction. Shown as numerical schlieren, run to <i>t</i> = 0.3, by which point the slip lines have rolled up into a jet at the centre &mdash; the part of the solution most sensitive to resolution.</p>
+
+            <p>All three runs reach the same finest cell size, so they ought to agree. What differs is how many cells are spent getting there: the uniform grid carries that resolution across the whole domain, while the refined runs concentrate it where the gradients are and leave the quiescent corners coarse.</p>
+
+            <table class="params">
+              <caption>Run parameters</caption>
+              <tbody>
+                <tr><th scope="row">Solver</th><td>PYRO (AMReX)</td></tr>
+                <tr><th scope="row">Refinement</th><td>Uniform; 1 level; 2 levels, at matched finest cell size</td></tr>
+                <tr><th scope="row">Field shown</th><td>Numerical schlieren</td></tr>
+                <tr><th scope="row">Output time</th><td><i>t</i> = 0.3</td></tr>
+              </tbody>
+            </table>
           </figcaption>
         </figure>
 
