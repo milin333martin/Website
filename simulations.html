@@ -198,35 +198,46 @@
 
       <div class="figures">
         <figure class="figure">
-          <div class="figure__media">
-
-            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
-            <div class="figure__slot">
-              <strong>Media to follow</strong>
-              <span>Figure 5</span>
+          <div class="figure__panel">
+            <div class="figure__media figure__media--plot" style="aspect-ratio: 1600 / 1280;">
+              <video controls loop muted autoplay playsinline preload="metadata" poster="media/fig05a-poster.jpg">
+                <source src="media/fig05a.mp4" type="video/mp4">
+                <a href="media/fig05a.mp4">Download the animation</a>
+              </video>
             </div>
+            <p class="figure__panelcap"><b>a</b>Pressure along the tube as the detonation propagates, with one panel per grid spacing.</p>
+          </div>
 
-            <!-- A. Video file:
-            <video controls loop muted playsinline preload="metadata" poster="media/fig05-poster.jpg">
-              <source src="media/fig05.mp4" type="video/mp4">
-              <a href="media/fig05.mp4">Download the video</a>
-            </video>
-            -->
+          <div class="figure__panel">
+            <div class="figure__media figure__media--plot" style="aspect-ratio: 1900 / 924;">
+              <img src="media/fig05b.png" alt="Pressure profiles at successive times, overlaid and coloured by time, with the von Neumann and Chapman-Jouguet pressures marked.">
+            </div>
+            <p class="figure__panelcap"><b>b</b>Profiles at successive times overlaid and coloured by time, with the von Neumann and Chapman&ndash;Jouguet pressures marked. Line style distinguishes the four grid spacings.</p>
+          </div>
 
-            <!-- B. YouTube (use the /embed/ URL):
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="1D detonation" allowfullscreen></iframe>
-            -->
-
-            <!-- C. Still image:
-            <img src="media/fig05.png" alt="1D detonation">
-            -->
-
+          <div class="figure__panel">
+            <div class="figure__media figure__media--plot" style="aspect-ratio: 1500 / 1193;">
+              <img src="media/fig05c.png" alt="Front speed normalised by the Chapman-Jouguet value, and the separation between shock and flame, for four grid spacings.">
+            </div>
+            <p class="figure__panelcap"><b>c</b>Front speed normalised by the CJ value (upper) and the separation between shock and flame (lower). The two coarser grids give an almost steady front close to the detonationFoam reference. Oscillations in the front speed grow as the grid is refined, and at 10 and 5&nbsp;&micro;m the flame intermittently separates from the shock by more than the ZND induction length. What form the instability takes is not settled by these runs.</p>
           </div>
 
           <figcaption class="figure__caption">
             <p class="figure__label">Fig. 5</p>
             <h3>1D detonation</h3>
-            <p>A steadily propagating detonation resolved in one dimension, following the ZND structure of a leading shock followed by an induction zone and heat release. This establishes the coupling between chemistry and hydrodynamics before any multidimensional structure is introduced.</p>
+            <p>A one-dimensional detonation in hydrogen&ndash;air, computed with PYRO using the Burke et al. (2012) mechanism. The same case was run at four grid spacings to establish how much of the front behaviour belongs to the physics and how much to the grid.</p>
+
+            <table class="params">
+              <caption>Run parameters</caption>
+              <tbody>
+                <tr><th scope="row">Solver</th><td>PYRO (AMReX)</td></tr>
+                <tr><th scope="row">Mixture</th><td>Hydrogen&ndash;air</td></tr>
+                <tr><th scope="row">Mechanism</th><td>Burke et al. (2012)</td></tr>
+                <tr><th scope="row">Grid spacing</th><td>40, 20, 10 and 5 &micro;m</td></tr>
+                <tr><th scope="row">Domain</th><td>51 cm</td></tr>
+                <tr><th scope="row">References</th><td>detonationFoam; ZND and CJ values</td></tr>
+              </tbody>
+            </table>
           </figcaption>
         </figure>
 
