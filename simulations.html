@@ -52,9 +52,9 @@
             </div>
 
             <!-- A. Video file:
-            <video controls loop muted playsinline preload="metadata" poster="media/fig01-poster.jpg">
-              <source src="media/fig01.mp4" type="video/mp4">
-              <a href="media/fig01.mp4">Download the video</a>
+            <video controls loop muted playsinline preload="metadata" poster="media/your-file-poster.jpg">
+              <source src="media/your-file.mp4" type="video/mp4">
+              <a href="media/your-file.mp4">Download the video</a>
             </video>
             -->
 
@@ -63,7 +63,7 @@
             -->
 
             <!-- C. Still image:
-            <img src="media/fig01.png" alt="1D Sod shock tube">
+            <img src="media/your-file.png" alt="1D Sod shock tube">
             -->
 
           </div>
@@ -98,9 +98,9 @@
             </div>
 
             <!-- A. Video file:
-            <video controls loop muted playsinline preload="metadata" poster="media/fig02-poster.jpg">
-              <source src="media/fig02.mp4" type="video/mp4">
-              <a href="media/fig02.mp4">Download the video</a>
+            <video controls loop muted playsinline preload="metadata" poster="media/your-file-poster.jpg">
+              <source src="media/your-file.mp4" type="video/mp4">
+              <a href="media/your-file.mp4">Download the video</a>
             </video>
             -->
 
@@ -109,7 +109,7 @@
             -->
 
             <!-- C. Still image:
-            <img src="media/fig02.png" alt="2D Riemann problem">
+            <img src="media/your-file.png" alt="2D Riemann problem">
             -->
 
           </div>
@@ -131,9 +131,9 @@
             </div>
 
             <!-- A. Video file:
-            <video controls loop muted playsinline preload="metadata" poster="media/fig03-poster.jpg">
-              <source src="media/fig03.mp4" type="video/mp4">
-              <a href="media/fig03.mp4">Download the video</a>
+            <video controls loop muted playsinline preload="metadata" poster="media/your-file-poster.jpg">
+              <source src="media/your-file.mp4" type="video/mp4">
+              <a href="media/your-file.mp4">Download the video</a>
             </video>
             -->
 
@@ -142,7 +142,7 @@
             -->
 
             <!-- C. Still image:
-            <img src="media/fig03.png" alt="Double Mach reflection">
+            <img src="media/your-file.png" alt="Double Mach reflection">
             -->
 
           </div>
@@ -164,9 +164,9 @@
             </div>
 
             <!-- A. Video file:
-            <video controls loop muted playsinline preload="metadata" poster="media/fig04-poster.jpg">
-              <source src="media/fig04.mp4" type="video/mp4">
-              <a href="media/fig04.mp4">Download the video</a>
+            <video controls loop muted playsinline preload="metadata" poster="media/your-file-poster.jpg">
+              <source src="media/your-file.mp4" type="video/mp4">
+              <a href="media/your-file.mp4">Download the video</a>
             </video>
             -->
 
@@ -175,7 +175,7 @@
             -->
 
             <!-- C. Still image:
-            <img src="media/fig04.png" alt="Supersonic flow over a cylinder and a wedge">
+            <img src="media/your-file.png" alt="Supersonic flow over a cylinder and a wedge">
             -->
 
           </div>
@@ -194,15 +194,50 @@
     <div class="band__tick">Reactive</div>
     <div class="band__body">
       <h2>Reactive flow</h2>
-      <p class="lede">Combustion cases, ordered roughly by how much of the problem has to be resolved: from a one-dimensional detonation through to three-dimensional quenching in confined geometry.</p>
+      <p class="lede">Combustion cases, ordered roughly by how much of the problem has to be resolved: from a one-dimensional laminar flame through to three-dimensional quenching in confined geometry.</p>
 
       <div class="figures">
         <figure class="figure">
           <div class="figure__panel">
+            <div class="figure__media figure__media--plot" style="aspect-ratio: 1900 / 748;">
+              <img src="media/laminar-flame-speed.png" alt="Recovered laminar flame speed converging on the Cantera value, and the decomposition of the laboratory front speed into flame speed and unburnt gas velocity.">
+            </div>
+            <p class="figure__panelcap"><b>a</b>The front is tracked in the laboratory frame and the flame speed recovered as <i>S</i><sub>L</sub> = <i>S</i><sub>f</sub> &minus; <i>u</i><sub>u</sub>. The right-hand panel shows why the subtraction matters: expansion of the products drives the unburnt gas forward at around 1300&nbsp;cm/s, so the front crosses the laboratory frame at roughly six times the flame speed. Past the initial transient the recovered value settles on the Cantera result.</p>
+          </div>
+
+          <div class="figure__panel">
+            <div class="figure__media figure__media--plot" style="aspect-ratio: 1900 / 746;">
+              <img src="media/laminar-flame-structure.png" alt="Temperature and major species profiles through the flame from PYRO, overlaid with a Cantera FreeFlame solution.">
+            </div>
+            <p class="figure__panelcap"><b>b</b>Temperature and major species through the flame at 570&nbsp;&micro;s, against a Cantera FreeFlame solution of the same mixture. Profiles are aligned on the 1500&nbsp;K isotherm.</p>
+          </div>
+
+          <figcaption class="figure__caption">
+            <p class="figure__label">Fig. 5</p>
+            <h3>1D laminar premixed flame</h3>
+            <p>A freely propagating hydrogen&ndash;air flame at an equivalence ratio of 1.0, computed with PYRO on a uniform 20&nbsp;&micro;m grid. The domain is filled with premixed reactants at atmospheric pressure and lit by a small kernel at the adiabatic flame temperature, after which the flame propagates on its own.</p>
+
+            <p>This is the baseline check on the chemistry and transport: a code that cannot reproduce a laminar flame is not worth trusting on anything built above it. Both the recovered flame speed and the internal structure agree closely with Cantera.</p>
+
+            <table class="params">
+              <caption>Run parameters</caption>
+              <tbody>
+                <tr><th scope="row">Solver</th><td>PYRO (AMReX)</td></tr>
+                <tr><th scope="row">Mixture</th><td>Hydrogen&ndash;air, &phi; = 1.0</td></tr>
+                <tr><th scope="row">Grid</th><td>Uniform 20 &micro;m</td></tr>
+                <tr><th scope="row">Initial conditions</th><td>1 atm; ignition kernel at the adiabatic flame temperature</td></tr>
+                <tr><th scope="row">Reference</th><td>Cantera FreeFlame, Soret diffusion off</td></tr>
+              </tbody>
+            </table>
+          </figcaption>
+        </figure>
+
+        <figure class="figure">
+          <div class="figure__panel">
             <div class="figure__media figure__media--plot" style="aspect-ratio: 1600 / 1280;">
-              <video controls loop muted autoplay playsinline preload="metadata" poster="media/fig05a-poster.jpg">
-                <source src="media/fig05a.mp4" type="video/mp4">
-                <a href="media/fig05a.mp4">Download the animation</a>
+              <video controls loop muted autoplay playsinline preload="metadata" poster="media/det1d-profiles-poster.jpg">
+                <source src="media/det1d-profiles.mp4" type="video/mp4">
+                <a href="media/det1d-profiles.mp4">Download the animation</a>
               </video>
             </div>
             <p class="figure__panelcap"><b>a</b>Pressure along the tube as the detonation propagates, with one panel per grid spacing.</p>
@@ -210,20 +245,20 @@
 
           <div class="figure__panel">
             <div class="figure__media figure__media--plot" style="aspect-ratio: 1900 / 924;">
-              <img src="media/fig05b.png" alt="Pressure profiles at successive times, overlaid and coloured by time, with the von Neumann and Chapman-Jouguet pressures marked.">
+              <img src="media/det1d-overlay.png" alt="Pressure profiles at successive times, overlaid and coloured by time, with the von Neumann and Chapman-Jouguet pressures marked.">
             </div>
             <p class="figure__panelcap"><b>b</b>Profiles at successive times overlaid and coloured by time, with the von Neumann and Chapman&ndash;Jouguet pressures marked. Line style distinguishes the four grid spacings.</p>
           </div>
 
           <div class="figure__panel">
             <div class="figure__media figure__media--plot" style="aspect-ratio: 1500 / 1193;">
-              <img src="media/fig05c.png" alt="Front speed normalised by the Chapman-Jouguet value, and the separation between shock and flame, for four grid spacings.">
+              <img src="media/det1d-front-speed.png" alt="Front speed normalised by the Chapman-Jouguet value, and the separation between shock and flame, for four grid spacings.">
             </div>
             <p class="figure__panelcap"><b>c</b>Front speed normalised by the CJ value (upper) and the separation between shock and flame (lower). The two coarser grids give an almost steady front close to the detonationFoam reference. Oscillations in the front speed grow as the grid is refined, and at 10 and 5&nbsp;&micro;m the flame intermittently separates from the shock by more than the ZND induction length. What form the instability takes is not settled by these runs.</p>
           </div>
 
           <figcaption class="figure__caption">
-            <p class="figure__label">Fig. 5</p>
+            <p class="figure__label">Fig. 6</p>
             <h3>1D detonation</h3>
             <p>A one-dimensional detonation in hydrogen&ndash;air, computed with PYRO using the Burke et al. (2012) mechanism. The same case was run at four grid spacings to establish how much of the front behaviour belongs to the physics and how much to the grid.</p>
 
@@ -247,13 +282,13 @@
             <!-- Delete this placeholder and uncomment one option below once you have the media. -->
             <div class="figure__slot">
               <strong>Media to follow</strong>
-              <span>Figure 6</span>
+              <span>Figure 7</span>
             </div>
 
             <!-- A. Video file:
-            <video controls loop muted playsinline preload="metadata" poster="media/fig06-poster.jpg">
-              <source src="media/fig06.mp4" type="video/mp4">
-              <a href="media/fig06.mp4">Download the video</a>
+            <video controls loop muted playsinline preload="metadata" poster="media/your-file-poster.jpg">
+              <source src="media/your-file.mp4" type="video/mp4">
+              <a href="media/your-file.mp4">Download the video</a>
             </video>
             -->
 
@@ -262,13 +297,13 @@
             -->
 
             <!-- C. Still image:
-            <img src="media/fig06.png" alt="2D cellular detonation">
+            <img src="media/your-file.png" alt="2D cellular detonation">
             -->
 
           </div>
 
           <figcaption class="figure__caption">
-            <p class="figure__label">Fig. 6</p>
+            <p class="figure__label">Fig. 7</p>
             <h3>2D cellular detonation</h3>
             <p>Transverse waves running along the front intersect the leading shock at triple points, and the tracks those points leave behind form the characteristic cell pattern. Cell size is the quantity of interest, and it is strongly sensitive to grid resolution.</p>
           </figcaption>
@@ -276,14 +311,14 @@
 
         <figure class="figure">
           <div class="figure__media figure__media--plot" style="aspect-ratio: 720 / 344;">
-            <video controls loop muted playsinline preload="metadata" poster="media/fig07-poster.jpg">
-              <source src="media/fig07.mp4" type="video/mp4">
-              <a href="media/fig07.mp4">Download the animation</a>
+            <video controls loop muted playsinline preload="metadata" poster="media/submm-ddt-poster.jpg">
+              <source src="media/submm-ddt.mp4" type="video/mp4">
+              <a href="media/submm-ddt.mp4">Download the animation</a>
             </video>
           </div>
 
           <figcaption class="figure__caption">
-            <p class="figure__label">Fig. 7</p>
+            <p class="figure__label">Fig. 8</p>
             <h3>2D flame acceleration in submillimetre channels</h3>
             <p>Temperature field as a flame accelerates along a submillimetre channel and transitions to detonation, computed with PYRO. The case follows Houim, Ozgen and Oran (2016) and uses the chemical&ndash;diffusive model parameters given there.</p>
 
@@ -306,14 +341,14 @@
 
         <figure class="figure">
           <div class="figure__media figure__media--plot" style="aspect-ratio: 1000 / 1336;">
-            <video controls loop muted playsinline preload="metadata" poster="media/fig08-poster.jpg">
-              <source src="media/fig08.mp4" type="video/mp4">
-              <a href="media/fig08.mp4">Download the animation</a>
+            <video controls loop muted playsinline preload="metadata" poster="media/wedge-ddt-poster.jpg">
+              <source src="media/wedge-ddt.mp4" type="video/mp4">
+              <a href="media/wedge-ddt.mp4">Download the animation</a>
             </video>
           </div>
 
           <figcaption class="figure__caption">
-            <p class="figure__label">Fig. 8</p>
+            <p class="figure__label">Fig. 9</p>
             <h3>DDT through wedge-shaped obstacles</h3>
             <p>Temperature (upper) and numerical schlieren (lower) as a flame propagates along a channel lined with rows of wedge-shaped obstacles. Ignition is from a small kernel at the left-hand end; the view follows the front as it moves down the channel.</p>
 
@@ -341,13 +376,13 @@
             <!-- Delete this placeholder and uncomment one option below once you have the media. -->
             <div class="figure__slot">
               <strong>Media to follow</strong>
-              <span>Figure 9</span>
+              <span>Figure 10</span>
             </div>
 
             <!-- A. Video file:
-            <video controls loop muted playsinline preload="metadata" poster="media/fig09-poster.jpg">
-              <source src="media/fig09.mp4" type="video/mp4">
-              <a href="media/fig09.mp4">Download the video</a>
+            <video controls loop muted playsinline preload="metadata" poster="media/your-file-poster.jpg">
+              <source src="media/your-file.mp4" type="video/mp4">
+              <a href="media/your-file.mp4">Download the video</a>
             </video>
             -->
 
@@ -356,13 +391,13 @@
             -->
 
             <!-- C. Still image:
-            <img src="media/fig09.png" alt="DDT of hydrogen&ndash;methane fuel blends">
+            <img src="media/your-file.png" alt="DDT of hydrogen&ndash;methane fuel blends">
             -->
 
           </div>
 
           <figcaption class="figure__caption">
-            <p class="figure__label">Fig. 9</p>
+            <p class="figure__label">Fig. 10</p>
             <h3>DDT of hydrogen&ndash;methane fuel blends</h3>
             <p>Run-up distance to detonation as a function of the hydrogen fraction in a methane mixture. This is the configuration most directly relevant to blending hydrogen into pipeline networks originally built for natural gas.</p>
           </figcaption>
@@ -370,49 +405,16 @@
 
         <figure class="figure">
           <div class="figure__media figure__media--plot" style="aspect-ratio: 1920 / 922;">
-            <video controls loop muted playsinline preload="metadata" poster="media/fig10-poster.jpg">
-              <source src="media/fig10.mp4" type="video/mp4">
-              <a href="media/fig10.mp4">Download the video</a>
+            <video controls loop muted playsinline preload="metadata" poster="media/shock-transmission-poster.jpg">
+              <source src="media/shock-transmission.mp4" type="video/mp4">
+              <a href="media/shock-transmission.mp4">Download the video</a>
             </video>
-          </div>
-
-          <figcaption class="figure__caption">
-            <p class="figure__label">Fig. 10</p>
-            <h3>Shock transmission from an open detonation tube</h3>
-            <p>A detonation reaching the open end of a tube transmits a shock into the surrounding gas, where it diffracts and then interacts with the exhaust products following it out of the tube. The upper panel overlays numerical schlieren with temperature; the lower panel follows pressure along the tube centreline as the wave passes.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="figure">
-          <div class="figure__media">
-
-            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
-            <div class="figure__slot">
-              <strong>Media to follow</strong>
-              <span>Figure 11</span>
-            </div>
-
-            <!-- A. Video file:
-            <video controls loop muted playsinline preload="metadata" poster="media/fig11-poster.jpg">
-              <source src="media/fig11.mp4" type="video/mp4">
-              <a href="media/fig11.mp4">Download the video</a>
-            </video>
-            -->
-
-            <!-- B. YouTube (use the /embed/ URL):
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="3D detonation quenching and reinitiation in narrow channels" allowfullscreen></iframe>
-            -->
-
-            <!-- C. Still image:
-            <img src="media/fig11.png" alt="3D detonation quenching and reinitiation in narrow channels">
-            -->
-
           </div>
 
           <figcaption class="figure__caption">
             <p class="figure__label">Fig. 11</p>
-            <h3>3D detonation quenching and reinitiation in narrow channels</h3>
-            <p>The full three-dimensional problem: a detonation entering a channel narrow enough to extinguish it. Whether the wave quenches outright or reinitiates depends on the front structure and on heat loss to the walls, neither of which is captured properly in two dimensions.</p>
+            <h3>Shock transmission from an open detonation tube</h3>
+            <p>A detonation reaching the open end of a tube transmits a shock into the surrounding gas, where it diffracts and then interacts with the exhaust products following it out of the tube. The upper panel overlays numerical schlieren with temperature; the lower panel follows pressure along the tube centreline as the wave passes.</p>
           </figcaption>
         </figure>
 
@@ -426,9 +428,42 @@
             </div>
 
             <!-- A. Video file:
-            <video controls loop muted playsinline preload="metadata" poster="media/fig12-poster.jpg">
-              <source src="media/fig12.mp4" type="video/mp4">
-              <a href="media/fig12.mp4">Download the video</a>
+            <video controls loop muted playsinline preload="metadata" poster="media/your-file-poster.jpg">
+              <source src="media/your-file.mp4" type="video/mp4">
+              <a href="media/your-file.mp4">Download the video</a>
+            </video>
+            -->
+
+            <!-- B. YouTube (use the /embed/ URL):
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="3D detonation quenching and reinitiation in narrow channels" allowfullscreen></iframe>
+            -->
+
+            <!-- C. Still image:
+            <img src="media/your-file.png" alt="3D detonation quenching and reinitiation in narrow channels">
+            -->
+
+          </div>
+
+          <figcaption class="figure__caption">
+            <p class="figure__label">Fig. 12</p>
+            <h3>3D detonation quenching and reinitiation in narrow channels</h3>
+            <p>The full three-dimensional problem: a detonation entering a channel narrow enough to extinguish it. Whether the wave quenches outright or reinitiates depends on the front structure and on heat loss to the walls, neither of which is captured properly in two dimensions.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="figure">
+          <div class="figure__media">
+
+            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
+            <div class="figure__slot">
+              <strong>Media to follow</strong>
+              <span>Figure 13</span>
+            </div>
+
+            <!-- A. Video file:
+            <video controls loop muted playsinline preload="metadata" poster="media/your-file-poster.jpg">
+              <source src="media/your-file.mp4" type="video/mp4">
+              <a href="media/your-file.mp4">Download the video</a>
             </video>
             -->
 
@@ -437,13 +472,13 @@
             -->
 
             <!-- C. Still image:
-            <img src="media/fig12.png" alt="Detonation quenching in an array of stacked narrow channels">
+            <img src="media/your-file.png" alt="Detonation quenching in an array of stacked narrow channels">
             -->
 
           </div>
 
           <figcaption class="figure__caption">
-            <p class="figure__label">Fig. 12</p>
+            <p class="figure__label">Fig. 13</p>
             <h3>Detonation quenching in an array of stacked narrow channels</h3>
             <p>Many narrow channels in parallel, which is the geometry a real detonation arrestor uses. The question is how the channels interact, and whether an array behaves like the sum of its individual channels.</p>
           </figcaption>
