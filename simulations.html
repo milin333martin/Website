@@ -173,35 +173,47 @@
         </figure>
 
         <figure class="figure">
-          <div class="figure__media">
-
-            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
-            <div class="figure__slot">
-              <strong>Media to follow</strong>
-              <span>Figure 4</span>
+          <div class="figure__panel">
+            <div class="figure__media figure__media--plot" style="aspect-ratio: 1800 / 850;">
+              <video controls loop muted playsinline preload="metadata" poster="media/wedge-shock-poster.jpg">
+                <source src="media/wedge-shock.mp4" type="video/mp4">
+                <a href="media/wedge-shock.mp4">Download the animation</a>
+              </video>
             </div>
+            <p class="figure__panelcap"><b>a</b>Wedge. Temperature field to 300&nbsp;&micro;s.</p>
+          </div>
 
-            <!-- A. Video file:
-            <video controls loop muted playsinline preload="metadata" poster="media/your-file-poster.jpg">
-              <source src="media/your-file.mp4" type="video/mp4">
-              <a href="media/your-file.mp4">Download the video</a>
-            </video>
-            -->
-
-            <!-- B. YouTube (use the /embed/ URL):
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Supersonic flow over a cylinder and a wedge" allowfullscreen></iframe>
-            -->
-
-            <!-- C. Still image:
-            <img src="media/your-file.png" alt="Supersonic flow over a cylinder and a wedge">
-            -->
-
+          <div class="figure__panel">
+            <div class="figure__media figure__media--plot" style="aspect-ratio: 1800 / 850;">
+              <video controls loop muted playsinline preload="metadata" poster="media/cylinder-shock-poster.jpg">
+                <source src="media/cylinder-shock.mp4" type="video/mp4">
+                <a href="media/cylinder-shock.mp4">Download the animation</a>
+              </video>
+            </div>
+            <p class="figure__panelcap"><b>b</b>Cylinder. Temperature field to 200&nbsp;&micro;s.</p>
           </div>
 
           <figcaption class="figure__caption">
             <p class="figure__label">Fig. 4</p>
             <h3>Supersonic flow over a cylinder and a wedge</h3>
-            <p>A detached bow shock ahead of the cylinder and an attached oblique shock at the wedge. Standoff distance and shock angle are both known quantities, so the case checks shock capture on curved and inclined geometry.</p>
+            <p>A planar shock passing over two obstacles, each held on the grid by PYRO&rsquo;s immersed boundary treatment. The case reproduces results from Chaudhuri, Hadjadj and Chinnayya, the paper the immersed boundary implementation follows, so it serves as the check on that part of the solver.</p>
+
+            <p>Over the wedge the shock reflects from the inclined faces, and the shear layers leaving the trailing edges roll up into vortices that meander downstream through the reflected waves. The cylinder gives the harder case: the shock cannot attach to a blunt body, so a curved bow shock stands off ahead of it with a hot stagnation region behind, and the separated wake breaks down into fine-scale turbulence far more readily than the wedge wake does.</p>
+
+            <p>Neither obstacle is meshed &mdash; both are held on the Cartesian grid throughout &mdash; so what these two cases test is whether that representation produces the right shock shapes, the right standoff, and a wake that behaves properly rather than one shaped by the staircase of the underlying grid.</p>
+
+            <table class="params">
+              <caption>Run parameters</caption>
+              <tbody>
+                <tr><th scope="row">Solver</th><td>PYRO (AMReX)</td></tr>
+                <tr><th scope="row">Geometry</th><td>Wedge and cylinder, immersed boundary</td></tr>
+                <tr><th scope="row">Domain</th><td>12 &times; 3 cm</td></tr>
+                <tr><th scope="row">Field shown</th><td>Temperature</td></tr>
+                <tr><th scope="row">End time</th><td>300 &micro;s (wedge); 200 &micro;s (cylinder)</td></tr>
+              </tbody>
+            </table>
+
+            <p class="figure__ref"><b>Reference</b>A. Chaudhuri, A. Hadjadj and A. Chinnayya, &ldquo;On the use of immersed boundary methods for shock/obstacle interactions&rdquo;, <cite>Journal of Computational Physics</cite>, vol. 230, no. 5, pp. 1731&ndash;1748, 2011. <a href="https://doi.org/10.1016/j.jcp.2010.11.016">doi:10.1016/j.jcp.2010.11.016</a></p>
           </figcaption>
         </figure>
       </div>
