@@ -141,35 +141,34 @@
         </figure>
 
         <figure class="figure">
-          <div class="figure__media">
-
-            <!-- Delete this placeholder and uncomment one option below once you have the media. -->
-            <div class="figure__slot">
-              <strong>Media to follow</strong>
-              <span>Figure 3</span>
-            </div>
-
-            <!-- A. Video file:
-            <video controls loop muted playsinline preload="metadata" poster="media/your-file-poster.jpg">
-              <source src="media/your-file.mp4" type="video/mp4">
-              <a href="media/your-file.mp4">Download the video</a>
+          <div class="figure__media figure__media--plot" style="aspect-ratio: 1900 / 538;">
+            <video controls loop muted playsinline preload="metadata" poster="media/dmr-schlieren-poster.jpg">
+              <source src="media/dmr-schlieren.mp4" type="video/mp4">
+              <a href="media/dmr-schlieren.mp4">Download the animation</a>
             </video>
-            -->
-
-            <!-- B. YouTube (use the /embed/ URL):
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Double Mach reflection" allowfullscreen></iframe>
-            -->
-
-            <!-- C. Still image:
-            <img src="media/your-file.png" alt="Double Mach reflection">
-            -->
-
           </div>
 
           <figcaption class="figure__caption">
             <p class="figure__label">Fig. 3</p>
             <h3>Double Mach reflection</h3>
-            <p>A strong shock meeting an inclined wall, producing an incident shock, a reflected shock, a Mach stem and a slip line, together with a wall jet. The case is demanding on both resolution and robustness, and is a useful test of adaptive refinement near the triple point.</p>
+            <p>A strong shock meeting an inclined wall, in the configuration set out by Woodward and Colella. Numerical schlieren, run to <i>t</i> = 0.2 with two levels of adaptive refinement.</p>
+
+            <p>The shock cannot reflect regularly off the wall, so a Mach stem forms and grows, meeting the incident and reflected shocks at a triple point that travels up and to the right. A slip line trails behind that triple point, and the shear across it rolls up into a train of vortices. Near the wall the flow is deflected into a jet that runs ahead beneath the stem.</p>
+
+            <p>The case is demanding on both resolution and robustness: the roll-up along the slip line only appears once the grid is fine enough, and the region behind the stem is where schemes tend to produce spurious oscillations. It is also a good test of refinement, since the features worth resolving occupy a small and moving fraction of the domain.</p>
+
+            <table class="params">
+              <caption>Run parameters</caption>
+              <tbody>
+                <tr><th scope="row">Solver</th><td>PYRO (AMReX)</td></tr>
+                <tr><th scope="row">Domain</th><td>4 &times; 1</td></tr>
+                <tr><th scope="row">Refinement</th><td>2 levels</td></tr>
+                <tr><th scope="row">Field shown</th><td>Numerical schlieren</td></tr>
+                <tr><th scope="row">End time</th><td><i>t</i> = 0.2</td></tr>
+              </tbody>
+            </table>
+
+            <p class="figure__ref"><b>Reference</b>P. Woodward and P. Colella, &ldquo;The numerical simulation of two-dimensional fluid flow with strong shocks&rdquo;, <cite>Journal of Computational Physics</cite>, vol. 54, no. 1, pp. 115&ndash;173, 1984. <a href="https://doi.org/10.1016/0021-9991(84)90142-6">doi:10.1016/0021-9991(84)90142-6</a></p>
           </figcaption>
         </figure>
 
